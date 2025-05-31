@@ -1,4 +1,5 @@
 # Import python packages
+import requests
 import streamlit as st
 import snowflake.connector
 from snowflake.snowpark.functions import col
@@ -32,6 +33,10 @@ if ingredients_list:
     # st.stop()
     
     time_to_insert = st.button('Submit Order')
+
+  smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+  st.text(smoothiefroot_response)
+
     
     
     if time_to_insert:
